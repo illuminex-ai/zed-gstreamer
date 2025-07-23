@@ -1269,6 +1269,8 @@ static GstFlowReturn gst_zedxonesrc_fill(GstPushSrc *psrc, GstBuffer *buf) {
     GST_BUFFER_OFFSET(buf) = temp_ugly_buf_index++;
     // <---- Timestamp meta-data
 
+    GST_DEBUG("Video ts: %lu(ns)", GST_BUFFER_TIMESTAMP(buf));
+
     GST_TRACE("PUSH Buffer meta-data");
     guint64 offset = GST_BUFFER_OFFSET(buf);
     GstZedSrcMeta *meta = gst_buffer_add_zed_src_meta(buf, info, pose, sens,
